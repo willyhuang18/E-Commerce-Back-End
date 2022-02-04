@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/willyhuang18/E-Commerce-Back-End/issues"
   },
-  "homepage": "https://github.com/willyhuang18/E-Commerce-Back-End#readme"
+  "homepage": "https://github.com/willyhuang18/E-Commerce-Back-End#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.15.0"
+  }
 }
