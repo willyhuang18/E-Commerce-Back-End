@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
   })
   .then(response => {
     if(!response){
-      res.status(404).json({message: "Please enter the vaild ID."});
+      res.status(404).json({message: "Please enter the valid ID."});
       return;
     }
     res.json(response)})
@@ -62,6 +62,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
   Category.update({
+    
     include: [
       {
         model: Product,
