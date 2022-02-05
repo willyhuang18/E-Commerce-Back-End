@@ -25,7 +25,9 @@ router.get('/:id', (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   Category.findOne({
-    
+    where: {
+      id: req.params.id
+    },
     include: [
       {
         model: Product,
@@ -33,7 +35,12 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-  .then(response => res.json(response))
+  .then(response => {
+    if(!response){
+      res.status(404).json({message: "Please enter the vaild ID."});
+      return;
+    }
+    res.json(response)})
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
