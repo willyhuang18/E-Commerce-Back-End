@@ -40,7 +40,8 @@ router.get('/:id', (req, res) => {
       res.status(404).json({message: "Please enter the valid ID."});
       return;
     }
-    res.json(response)})
+    res.json(response);
+  })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -66,7 +67,13 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(response => res.json(response))
+  .then(response =>{ 
+      if(!response[0]) {
+        res.status(404).json({message: "Please enter the valid ID for this category."});
+        return;
+      }
+      res.json(response);
+  })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -80,7 +87,13 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(response => res.json(response))
+  .then(response =>{
+      if(!response[0]) {
+        res.status(404).json({message: "Please enter the valid ID for this category."});
+        return;
+      }
+      res.json(response);
+  })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
