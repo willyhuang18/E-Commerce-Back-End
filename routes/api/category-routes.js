@@ -62,7 +62,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-  Category.update({
+  Category.update(req.body, {
     where: {
       id: req.params.id
     }
@@ -88,7 +88,7 @@ router.delete('/:id', (req, res) => {
     }
   })
   .then(response =>{
-      if(!response[0]) {
+      if(!response) {
         res.status(404).json({message: "Please enter the valid ID for this category."});
         return;
       }
