@@ -4,6 +4,7 @@ Work independent to implement the step into the existing Files:
 - As a Developer, I want to use the knowledge I learned to create the api by using JavaScript, Node.js, MySQL, Insomnia.
 
 # Site Picture
+![image](https://user-images.githubusercontent.com/87446864/152710347-752307a7-c043-4465-978e-3cd25f2b4ce7.png)
 
 
 # Technologies Used
